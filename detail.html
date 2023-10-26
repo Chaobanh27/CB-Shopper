@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Detail</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
@@ -152,7 +153,7 @@
               <li class="nav-item">
                 <a class="nav-link position-relative" href="/cart.html"
                   >Cart
-                  <span class="badge bg-primary">6</span>
+                  <span id="total-quantity" class="text-primary">0</span>
                 </a>
               </li>
             </ul>
@@ -166,93 +167,32 @@
     <section class="product-detail">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="product-slide col-lg-6">
-            <div class="mySlides">
-              <div class="numbertext">1 / 6</div>
-              <img src="/assets/images/products/product-3.jpg" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">2 / 6</div>
-              <img src="/assets/images/detail/model-1.jpg" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="/assets/images/detail/model-2.jpg" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">4 / 6</div>
-              <img src="/assets/images/detail/model-3.jpg" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">5 / 6</div>
-              <img src="/assets/images/detail/model-4.jpg" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">6 / 6</div>
-              <img src="/assets/images/detail/model-5.jpg" />
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)"
-              ><i class="fas fa-angle-left"></i
-            ></a>
-            <a class="next" onclick="plusSlides(1)"
-              ><i class="fas fa-angle-right"></i
-            ></a>
-
-            <div class="row">
-              <div class="column">
-                <img
-                  class="product-small-image cursor"
-                  src="/assets/images/products/product-3.jpg"
-                  onclick="currentSlide(1)"
-                  alt="The Woods"
-                />
+          <div class="tab-wrapper col-lg-5 col-sm-9">
+            <div class="tab-content">
+              <div class="tab-item">
+                <img id="tab-img" class="w-100" src="" alt="" />
               </div>
-              <div class="column">
-                <img
-                  class="product-small-image cursor"
-                  src="/assets/images/detail/model-1.jpg"
-                  onclick="currentSlide(2)"
-                  alt="Cinque Terre"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="product-small-image cursor"
-                  src="/assets/images/detail/model-2.jpg"
-                  onclick="currentSlide(3)"
-                  alt="Mountains and fjords"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="product-small-image cursor"
-                  src="/assets/images/detail/model-3.jpg"
-                  onclick="currentSlide(4)"
-                  alt="Northern Lights"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="product-small-image cursor"
-                  src="/assets/images/detail/model-4.jpg"
-                  onclick="currentSlide(5)"
-                  alt="Nature and sunrise"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="product-small-image cursor"
-                  src="/assets/images/detail/model-5.jpg"
-                  onclick="currentSlide(6)"
-                  alt="Snowy Mountains"
-                />
-              </div>
+            </div>
+            <ul class="tab">
+              <li>
+                <img src="assets/images/detail/model-1.jpg" alt="" />
+              </li>
+              <li>
+                <img src="assets/images/detail/model-2.jpg" alt="" />
+              </li>
+              <li>
+                <img src="assets/images/detail/model-3.jpg" alt="" />
+              </li>
+              <li>
+                <img src="assets/images/detail/model-4.jpg" alt="" />
+              </li>
+              <li>
+                <img src="assets/images/detail/model-5.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="control mb-3">
+              <button id="prev-slide" class="btn btn-primary">Prev</button>
+              <button id="next-slide" class="btn btn-primary">Next</button>
             </div>
           </div>
           <div class="col-lg-6 info">
@@ -362,184 +302,238 @@
         <div id="style-with-list">
           <div id="list">
             <div class="style-with-item">
-              <img src="/assets/images/products/product-1.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-1.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product1" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-2.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-2.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product2" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-3.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-3.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product2" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-4.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-4.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product3" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-5.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-5.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product4" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-6.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-6.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product5" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-7.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-7.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product6" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-8.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-8.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product7" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
             <div class="style-with-item">
-              <img src="/assets/images/products/product-9.jpg" class="avatar" />
-              <div class="style-with-item-content">
-                <div class="item-title">
-                  <span>T-shirt</span>
-                </div>
-                <div class="item-description">
-                  <span class="old-price">$199.99</span>
-                  $179.99
-                </div>
-                <div class="item-action mt-2">
-                  <button href="#" class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-heart"></i>
-                  </button>
-                  <button href="#" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                  </button>
-                </div>
-              </div>
+              <img
+                src="/assets/images/products/product-2.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product8" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+            <div class="style-with-item">
+              <img
+                src="/assets/images/products/product-9.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product9" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+            <div class="style-with-item">
+              <img
+                src="/assets/images/products/product-1.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product1" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+            <div class="style-with-item">
+              <img
+                src="/assets/images/products/product-2.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product2" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+            <div class="style-with-item">
+              <img
+                src="/assets/images/products/product-3.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h2 class="card-title">T-shirt</h2>
+              <p class="card-text">$99</p>
+              <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="./detail.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <button id="product3" class="btn btn-primary btn-sm add-to-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -636,57 +630,127 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
     <script>
-      const slides = document.getElementsByClassName("mySlides");
-      const smallImages = document.getElementsByClassName(
-        "product-small-image"
-      );
-
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        let i;
-        if (n > slides.length) {
-          slideIndex = 1;
+      $(document).ready(function () {
+        let totalQuantity;
+        let totalQuantityCheck = localStorage.getItem("total-quantity");
+        if (totalQuantityCheck != null) {
+          totalQuantity = parseInt(JSON.parse(totalQuantityCheck));
+          $("#total-quantity").text(totalQuantity);
         }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < smallImages.length; i++) {
-          smallImages[i].className = smallImages[i].className.replace(
-            " active",
-            ""
-          );
-        }
-        slides[slideIndex - 1].style.display = "block";
-        smallImages[slideIndex - 1].className += " active";
-      }
 
-      //item slide start
-      const slideItemNextBtn = document.getElementById("next");
-      const slideItemPrevBtn = document.getElementById("prev");
-      const slideItemItem = document.querySelector(".style-with-item-content");
-      const slideItemFormList = document.getElementById("style-with-list");
-      const widthItem = slideItemItem.offsetWidth;
+        $("li").click(function () {
+          $("li").removeClass("active");
+          $(this).addClass("active");
+          let check = $(this).find("a").hasClass("show");
+          if (check) {
+            $(this).find("a").removeClass("show");
+          } else {
+            $("a").removeClass("show");
+            $(this).find("a").addClass("show");
+          }
+        });
 
-      slideItemNextBtn.addEventListener("click", () => {
-        document.getElementById("style-with-list").scrollLeft += widthItem;
+        function activeTab(obj) {
+          $(".tab-wrapper ul li").removeClass("active");
+          $(obj).addClass("active");
+          let id = $(obj).find("img").attr("src");
+          $("#tab-img").attr({ src: id });
+        }
+
+        $(".tab li").click(function () {
+          activeTab(this);
+        });
+
+        activeTab($(".tab li:first-child"));
+
+        $("#next-slide").click(function () {
+          let current = $(".tab").find(".active");
+          let next = current.next();
+          let nextImg = $(next).find("img").attr("src");
+          $("#tab-img").attr({ src: nextImg });
+
+          if (next.length > 0) {
+            current.removeClass("active");
+            next.addClass("active");
+          } else {
+            current.removeClass("active");
+            $(".tab li:first-child").addClass("active");
+            let currentImg = $(".tab li:first-child").find("img").attr("src");
+            $("#tab-img").attr({ src: currentImg });
+          }
+        });
+
+        $("#prev-slide").click(function () {
+          let current = $(".tab").find(".active");
+          let prev = current.prev();
+          let currentImg = $(prev).find("img").attr("src");
+          $("#tab-img").attr({ src: currentImg });
+
+          if (prev.length > 0) {
+            current.removeClass("active");
+            prev.addClass("active");
+          } else {
+            current.removeClass("active");
+            $(".tab li:last-child").addClass("active");
+            let currentImg = $(".tab li:last-child").find("img").attr("src");
+            $("#tab-img").attr({ src: currentImg });
+          }
+          console.log(prev.length);
+        });
+
+        setInterval(function () {
+          $("#next-slide").click();
+        }, 3000);
+
+        //navbar start
+        $(window).scroll(() => {
+          if ($(window).scrollTop() > 10) {
+            $("#navbar").addClass("navbar-top");
+          } else {
+            $("#navbar").removeClass("navbar-top");
+          }
+        });
+        //navbar end
+
+        //sliden items start
+        const styleNextBtn = $("#next");
+        const stylePrevBtn = $("#prev");
+        const styleItem = $(".style-with-item");
+        const styleFormList = $("#style-with-list");
+        const widthItem = styleItem.outerWidth();
+
+        styleNextBtn.click(() => {
+          styleFormList.scrollLeft(styleFormList.scrollLeft() + widthItem);
+        });
+
+        stylePrevBtn.click(() => {
+          styleFormList.scrollLeft(styleFormList.scrollLeft() - widthItem);
+        });
+        //slide items end
       });
-      slideItemPrevBtn.addEventListener("click", () => {
-        document.getElementById("style-with-list").scrollLeft -= widthItem;
+
+      //scroll to top start
+      const scrollBtn = document.getElementById("btn");
+      const btnText = document.getElementById("btn-text");
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
       });
-      //item slide end
+
+      window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+
+      scrollBtn.addEventListener("mouseover", () => {
+        btnText.style.display = "block";
+      });
+      scrollBtn.addEventListener("mouseleave", () => {
+        btnText.style.display = "none";
+      });
+      //scroll to top end
     </script>
   </body>
 </html>

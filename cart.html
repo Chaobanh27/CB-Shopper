@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Cart</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
@@ -29,7 +30,7 @@
       </button>
     </div>
     <!-- scroll to top -->
-    
+
     <!-- pre-navbar start -->
     <section class="pre-navbar">
       <div class="container">
@@ -156,7 +157,7 @@
               <li class="nav-item">
                 <a class="nav-link position-relative" href="/cart.html"
                   >Cart
-                  <span class="badge bg-primary">6</span>
+                  <span id="total-quantity" class="text-primary">0</span>
                 </a>
               </li>
             </ul>
@@ -165,267 +166,28 @@
       </div>
     </nav>
     <!-- nav end -->
-
-    <!-- shopping cart start -->
-    <section class="shopping-cart" style="background-color: #eee">
-      <div class="container py-5">
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col">
-            <div class="card">
-              <div class="card-body p-4">
-                <div class="row">
-                  <div class="col-lg-7">
-                    <div
-                      class="d-flex justify-content-between align-items-center mb-4"
-                    >
-                      <div>
-                        <h3 class="mb-1">Shopping cart</h3>
-                        <p class="mb-0">You have 6 items in your cart</p>
-                      </div>
-                    </div>
-
-                    <div class="card mb-3">
-                      <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <div>
-                              <img
-                                src="/assets/images/products/product-2.jpg"
-                                class="img-fluid rounded-3"
-                                alt="Shopping item"
-                                style="width: 65px"
-                              />
-                            </div>
-                            <div class="ms-3">
-                              <h5>T-shirt</h5>
-                              <p class="small mb-0">Navy Blue</p>
-                            </div>
-                          </div>
-                          <div class="d-flex flex-row align-items-center">
-                            <div style="width: 50px">
-                              <h5 class="fw-normal mb-0">2</h5>
-                            </div>
-                            <div style="width: 80px">
-                              <h5 class="mb-0">$899</h5>
-                            </div>
-                            <a href="#!" style="color: red"
-                              ><i class="fas fa-trash-alt"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card mb-3">
-                      <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <div>
-                              <img
-                                src="/assets/images/products/product-3.jpg"
-                                class="img-fluid rounded-3"
-                                alt="Shopping item"
-                                style="width: 65px"
-                              />
-                            </div>
-                            <div class="ms-3">
-                              <h5>T-shirt</h5>
-                              <p class="small mb-0">Navy Blue</p>
-                            </div>
-                          </div>
-                          <div class="d-flex flex-row align-items-center">
-                            <div style="width: 50px">
-                              <h5 class="fw-normal mb-0">2</h5>
-                            </div>
-                            <div style="width: 80px">
-                              <h5 class="mb-0">$999</h5>
-                            </div>
-                            <a href="#!" style="color: red"
-                              ><i class="fas fa-trash-alt"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card mb-3">
-                      <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <div>
-                              <img
-                                src="/assets/images/products/product-4.jpg"
-                                class="img-fluid rounded-3"
-                                alt="Shopping item"
-                                style="width: 65px"
-                              />
-                            </div>
-                            <div class="ms-3">
-                              <h5>T-shirt</h5>
-                              <p class="small mb-0">Onyx Black</p>
-                            </div>
-                          </div>
-                          <div class="d-flex flex-row align-items-center">
-                            <div style="width: 50px">
-                              <h5 class="fw-normal mb-0">1</h5>
-                            </div>
-                            <div style="width: 80px">
-                              <h5 class="mb-0">$1199</h5>
-                            </div>
-                            <a href="#!" style="color: red"
-                              ><i class="fas fa-trash-alt"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card mb-3 mb-lg-0">
-                      <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <div>
-                              <img
-                                src="/assets/images/products/product-5.jpg"
-                                class="img-fluid rounded-3"
-                                alt="Shopping item"
-                                style="width: 65px"
-                              />
-                            </div>
-                            <div class="ms-3">
-                              <h5>T-shirt</h5>
-                              <p class="small mb-0">Red</p>
-                            </div>
-                          </div>
-                          <div class="d-flex flex-row align-items-center">
-                            <div style="width: 50px">
-                              <h5 class="fw-normal mb-0">1</h5>
-                            </div>
-                            <div style="width: 80px">
-                              <h5 class="mb-0">$1799</h5>
-                            </div>
-                            <a href="#!" style="color: red"
-                              ><i class="fas fa-trash-alt"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-5">
-                    <div class="card bg-primary text-white rounded-3">
-                      <div class="card-body">
-                        <div
-                          class="d-flex justify-content-between align-items-center mb-4"
-                        >
-                          <h5 class="mb-0">Card details</h5>
-                        </div>
-
-                        <p class="small mb-2">Card type</p>
-                        <a href="#!" type="submit" class="text-white">
-                          <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
-                        </a>
-                        <a href="#!" type="submit" class="text-white">
-                          <i class="fa-brands fa-cc-visa fa-2xl"></i>
-                        </a>
-                        <a href="#!" type="submit" class="text-white">
-                          <i class="fa-brands fa-cc-paypal fa-2xl"></i>
-                        </a>
-
-                        <form class="mt-4">
-                          <div class="form-outline form-white mb-4">
-                            <input
-                              type="text"
-                              id="typeName"
-                              class="form-control form-control-lg"
-                              siez="17"
-                              placeholder="Cardholder's Name"
-                            />
-                          </div>
-
-                          <div class="form-outline form-white mb-4">
-                            <input
-                              type="text"
-                              id="card-number"
-                              class="form-control form-control-lg"
-                              siez="17"
-                              placeholder="1234 5678 9012 3457"
-                              minlength="19"
-                              maxlength="19"
-                            />
-                          </div>
-
-                          <div class="row">
-                            <div class="col-md-6 mb-4">
-                              <div class="form-outline form-white">
-                                <input
-                                  type="text"
-                                  id="typeExp"
-                                  class="form-control form-control-lg"
-                                  placeholder="MM/YYYY"
-                                  size="7"
-                                  id="exp"
-                                  minlength="7"
-                                  maxlength="7"
-                                />
-                              </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                              <div class="form-outline form-white">
-                                <input
-                                  type="password"
-                                  id="card-cvc"
-                                  class="form-control form-control-lg"
-                                  placeholder="&#9679;&#9679;&#9679;"
-                                  size="1"
-                                  minlength="3"
-                                  maxlength="3"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-
-                        <hr class="my-4" />
-
-                        <div class="d-flex justify-content-between">
-                          <p class="mb-2">Subtotal</p>
-                          <p class="mb-2">$4798.00</p>
-                        </div>
-
-                        <div class="d-flex justify-content-between">
-                          <p class="mb-2">Shipping</p>
-                          <p class="mb-2">$20.00</p>
-                        </div>
-
-                        <div class="d-flex justify-content-between mb-4">
-                          <p class="mb-2">Total(Incl. taxes)</p>
-                          <p class="mb-2">$4818.00</p>
-                        </div>
-
-                        <button
-                          type="button"
-                          class="btn btn-info btn-block btn-lg"
-                        >
-                          <div class="text-light" style="font-weight: bold">
-                            <span
-                              >Checkout
-                              <i class="fas fa-long-arrow-alt-right ms-2"></i>
-                            </span>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section class="shopping-cart mt-5">
+      <div class="container">
+        <div class="table-responsive cart_info">
+          <table class="table">
+            <thead>
+              <tr class="cart-menu">
+                <td class="image">ITEM</td>
+                <td class="description">NAME</td>
+                <td class="price">PRICE</td>
+                <td class="quantity">QUANTITY</td>
+                <td class="total">TOTAL</td>
+                <td class="action">REMOVE</td>
+              </tr>
+            </thead>
+            <tbody class="table-body"></tbody>
+          </table>
+          <div class="summary">
+            <h2>Total <span id="sum"></span></h2>
           </div>
         </div>
       </div>
     </section>
-    <!-- shopping cart end -->
 
     <!-- footer start -->
     <footer class="text-center text-lg-start">
@@ -515,5 +277,194 @@
 
     <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let sum = 0;
+        let productsTemp = {};
+
+        let totalQuantity;
+        let totalQuantityCheck = localStorage.getItem("total-quantity");
+        if (totalQuantityCheck != null) {
+          totalQuantity = parseInt(JSON.parse(totalQuantityCheck));
+          $("#total-quantity").text(totalQuantity);
+        }
+
+        let productGet = localStorage.getItem("products");
+        if (productGet != null) {
+          let products = JSON.parse(productGet);
+          Object.keys(products).map(function (key, index) {
+            let html = `
+                <tr class="cart-products" id=${key}>
+                    <td class="cart-image">
+                      <a href=""><img src="${
+                        products[key]["image"]
+                      }" alt=""></a>
+                    </td>
+                    <td class="cart-description">
+                      <h4><a href="">${products[key]["name"]}</a></h4>
+                      <p>ID:${key}</p>
+                    </td>
+                    <td class="cart-price">
+                      <p>${products[key]["price"]}</p>
+                    </td>
+                    <td class="cart-quantity">
+                      <div class="cart-quantity-button">
+                        <button class="cart-quantity-up btn btn-primary" href=""><i class="fa-solid fa-plus"></i></button>
+                        <input readonly class="cart-quantity-input" type="text" name="quantity" value="${
+                          products[key]["qty"]
+                        }" autocomplete="off" size="1">
+                        <button class="cart-quantity-down btn btn-primary" href=""><i class="fa-solid fa-minus"></i></button>
+                      </div>
+                    </td>
+                    <td class="cart-total">
+                      <p class="cart-total-price">${
+                        "$" +
+                        products[key]["qty"] *
+                          parseInt(products[key]["price"].substring(1))
+                      }</p>
+                    </td>
+                    <td class="cart-delete">
+                      <button class="btn btn-danger cart-quantity-delete" href=""><i class="fa fa-times"></i></button>
+                    </td>
+                </tr>
+                `;
+            $("tbody").append(html);
+            sum =
+              sum +
+              products[key]["qty"] *
+                parseInt(products[key]["price"].substring(1));
+          });
+          $("#sum").html("$" + sum);
+
+          $(".cart-quantity-delete").click(function () {
+            let productId = $(this).closest("tr").attr("id");
+            let sumTotal = parseInt($("#sum").html().substring(1));
+            let cartQtyInputVal = parseInt(
+              $(this).closest("div").find("input").attr("value")
+            );
+            let cartTotalPrice = parseInt(
+              $(this)
+                .closest("tr")
+                .find(".cart-total-price")
+                .html()
+                .substring(1)
+            );
+            $(this).closest("tr").remove();
+            delete products[productId];
+            let productsSet = JSON.stringify(products);
+            localStorage.setItem("products", productsSet);
+            $("#sum").html("$" + (sumTotal - cartTotalPrice));
+
+            totalQuantity = totalQuantity - cartQtyInputVal;
+            $("#total-quantity").text(totalQuantity);
+            let totalQuantityJson = JSON.stringify(totalQuantity);
+            localStorage.setItem("total-quantity", totalQuantityJson);
+          });
+
+          $(".cart-quantity-up").click(function () {
+            let productId = $(this).closest("tr").attr("id");
+            let cartPrice = parseInt(
+              $(this).closest("tr").find(".cart-price p").html().substring(1)
+            );
+            let cartQtyInputVal = parseInt(
+              $(this).closest("div").find("input").attr("value")
+            );
+            let cartTotalPrice = parseInt(
+              $(this)
+                .closest("tr")
+                .find(".cart-total-price")
+                .html()
+                .substring(1)
+            );
+            cartQtyInputVal = products[productId]["qty"] + 1;
+            $(this).closest("div").find("input").val(cartQtyInputVal);
+            $(this)
+              .closest("tr")
+              .find(".cart-total-price")
+              .html("$" + cartQtyInputVal * cartPrice);
+            products[productId]["qty"] = cartQtyInputVal;
+            let productsSet = JSON.stringify(products);
+            localStorage.setItem("products", productsSet);
+            let sumTotal = parseInt($("#sum").html().substring(1));
+            $("#sum").html("$" + (sumTotal + cartPrice));
+
+            totalQuantity = totalQuantity + 1;
+            $("#total-quantity").text(totalQuantity);
+            let totalQuantityJson = JSON.stringify(totalQuantity);
+            localStorage.setItem("total-quantity", totalQuantityJson);
+          });
+
+          $(".cart-quantity-down").click(function () {
+            let productId = $(this).closest("tr").attr("id");
+            let cartPrice = parseInt(
+              $(this).closest("tr").find(".cart-price p").html().substring(1)
+            );
+            let cartQtyInputVal = parseInt(
+              $(this).closest("div").find("input").attr("value")
+            );
+            let cartTotalPrice = parseInt(
+              $(this)
+                .closest("tr")
+                .find(".cart-total-price")
+                .html()
+                .substring(1)
+            );
+            cartQtyInputVal = products[productId]["qty"] - 1;
+            $(this).closest("div").find("input").val(cartQtyInputVal);
+            $(this)
+              .closest("tr")
+              .find(".cart-total-price")
+              .html("$" + cartQtyInputVal * cartPrice);
+            products[productId]["qty"] = cartQtyInputVal;
+            if (cartQtyInputVal < 1) {
+              $(this).closest("tr").remove();
+              delete products[productId];
+            }
+            let productsSet = JSON.stringify(products);
+            localStorage.setItem("products", productsSet);
+            let sumTotal = parseInt($("#sum").html().substring(1));
+            $("#sum").html("$" + (sumTotal - cartPrice));
+
+            totalQuantity = totalQuantity - 1;
+            $("#total-quantity").text(totalQuantity);
+            let totalQuantityJson = JSON.stringify(totalQuantity);
+            localStorage.setItem("total-quantity", totalQuantityJson);
+          });
+        }
+
+        //navbar start
+        $(window).scroll(() => {
+          if ($(window).scrollTop() > 10) {
+            $("#navbar").addClass("navbar-top");
+          } else {
+            $("#navbar").removeClass("navbar-top");
+          }
+        });
+        //navbar end
+      });
+
+      //scroll to top start
+      const scrollBtn = document.getElementById("btn");
+      const btnText = document.getElementById("btn-text");
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      });
+
+      window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+
+      scrollBtn.addEventListener("mouseover", () => {
+        btnText.style.display = "block";
+      });
+      scrollBtn.addEventListener("mouseleave", () => {
+        btnText.style.display = "none";
+      });
+      //scroll to top end
+    </script>
   </body>
 </html>
